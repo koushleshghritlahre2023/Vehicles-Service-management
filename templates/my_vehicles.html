@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>My Vehicles</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+<h2>My Vehicles</h2>
+
+<a href="/add_vehicle" class="btn btn-success mb-3">
+Add Vehicle
+</a>
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>No.</th>
+<th>Brand</th>
+<th>Model</th>
+<th>Fuel</th>
+<th>Year</th>
+<th>KM</th>
+<th>Action</th>
+
+</tr>
+
+{% for vehicle in vehicles %}
+
+<tr>
+
+<td>{{ vehicle.vehicle_number }}</td>
+
+<td>{{ vehicle.brand }}</td>
+
+<td>{{ vehicle.model }}</td>
+
+<td>{{ vehicle.fuel }}</td>
+
+<td>{{ vehicle.year }}</td>
+
+<td>{{ vehicle.km }}</td>
+
+<td>
+
+<a href="/delete_vehicle/{{vehicle.id}}" class="btn btn-danger btn-sm">
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>
